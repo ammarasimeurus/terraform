@@ -19,8 +19,4 @@ terraform {
   }
 }
 
-  my_vpc         = module.my_vpc.vpc_1.vpc_id
-  private_subnet = module.my_vpc.vpc_1.private_subnet_ids
-  img            = "public.ecr.aws/y2a9o9h4/ammar-ecr:latest"
-  depends_on     = [module.rds]
-}
+ 
