@@ -7,7 +7,7 @@ locals {
   
 provider "aws" {
   region = local.reg
-}
+}  
   
 
 terraform {
