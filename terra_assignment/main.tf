@@ -5,10 +5,18 @@ locals {
   dbpass = var.dbpass
 }
 
+
 provider "aws" {
   region = local.reg
 }
-
+terraform {
+  backend "s3" {
+    bucket         = "ammar-jenkins"
+    key            = "terraform.tfstate"   # The name of your state file
+    region         = local.reg
+    encrypt        = false                  # Optionally enable encryption
+  }
+}
 module "my_vpc" {
   source               = "./modules/vpc"
   for_each             = var.vpc_config
