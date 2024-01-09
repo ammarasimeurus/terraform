@@ -4,7 +4,7 @@ locals {
   dbname = var.dbname
   dbpass = var.dbpass
 }
-
+  
 provider "aws" {
   region = local.reg
 }
